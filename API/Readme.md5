@@ -1,0 +1,7 @@
+---------------on python 3.8--------------
+https://www.youtube.com/watch?v=PTZiDnuC86g
+pip install virtualenv
+-----------------------
+pip install pipenv
+pipenv shell
+pipenv install flask flask-sqlalchemy flask-marshmallow marshmallow-sqlalchemy
