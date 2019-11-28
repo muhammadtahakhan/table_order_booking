@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS, cross_origin
 import os
 
 #init app
@@ -13,6 +14,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 # init marshmallow
 ma = Marshmallow(app)
+# init CORS
+cors = CORS(app)
 
 # Product Class/Model
 class Product(db.Model):
