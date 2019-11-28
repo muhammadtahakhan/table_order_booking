@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS, cross_origin
@@ -16,6 +17,8 @@ db = SQLAlchemy(app)
 ma = Marshmallow(app)
 # init CORS
 cors = CORS(app)
+#init falsk rest full
+api = Api(app)
 
 # Product Class/Model
 class Product(db.Model):
@@ -93,6 +96,13 @@ def update_product(id):
 
     db.session.commit()
     return product_schema.jsonify(product)
+
+# rest full test
+class HelloWorld(Resource):
+    def get(self):
+        return {'hello': 'world'}
+
+api.add_resource(HelloWorld, '/', '/helloworld')
     
 # Run Server
 if __name__ == '__main__':
