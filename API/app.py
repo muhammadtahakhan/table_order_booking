@@ -10,6 +10,7 @@ app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 # Databse
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/table_order_booker'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Init DB
 db = SQLAlchemy(app)
